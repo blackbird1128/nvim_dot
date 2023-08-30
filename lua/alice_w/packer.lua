@@ -33,7 +33,6 @@ return require('packer').startup(function(use)
   use('mbbill/undotree')
 
   use('nvim-tree/nvim-web-devicons') -- OPTIONAL: for file icons
-  use('lewis6991/gitsigns.nvim') -- OPTIONAL: for git status
   use('romgrk/barbar.nvim')
   use {
       "windwp/nvim-autopairs",
