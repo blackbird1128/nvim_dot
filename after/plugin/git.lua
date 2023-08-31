@@ -12,4 +12,5 @@ require('gitsigns').setup({
 
     signcolumn = false,
     numhl = true,
+    attach_to_untracked = false,
 })
