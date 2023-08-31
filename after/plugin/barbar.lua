@@ -6,7 +6,7 @@ local opts = { noremap = true, silent = true }
 map('n', '<leader><leader>', '<Cmd>BufferPick<CR>', opts)
 map('n', '<A-x>', '<Cmd>BufferClose!<CR>', opts)
 
-map('n', '<A-a>', '<Cmd>BufferNext<CR>', opts)
+-- map('n', '<A-a>', '<Cmd>BufferNext<CR>', opts)
 
 require'barbar'.setup {
 

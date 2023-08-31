@@ -17,11 +17,11 @@ return require('packer').startup(function(use)
     }
   }
 
-  use({ 'rose-pine/neovim', as = 'rose-pine',
-	config = function()
-		vim.cmd('colorscheme rose-pine')
-    end
-  })
+  -- Colorschemes 
+  use( "rafamadriz/neon")
+  use("catppuccin/nvim")
+  use("folke/tokyonight.nvim")
+  -- 
 
   use('tpope/vim-fugitive')
   use('lewis6991/gitsigns.nvim')
