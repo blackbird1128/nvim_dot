@@ -6,13 +6,14 @@ return {
           'nvim-telescope/telescope.nvim', tag = '0.1.2',
           dependencies = { 'nvim-lua/plenary.nvim',   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' },}
       },
-  
 
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     'tpope/vim-fugitive',
     'lewis6991/gitsigns.nvim',
     'theprimeagen/harpoon',
     'mbbill/undotree',
+    {'ggandor/leap.nvim', priority=1000},
+    'jinh0/eyeliner.nvim',
 
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     'romgrk/barbar.nvim',
@@ -21,12 +22,8 @@ return {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     },
-    {   "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-        require("copilot").setup({})
-    end
+    {   "github/copilot.vim",
+     build = ":Copilot setup",
     },
     {
     'simrat39/rust-tools.nvim', ft = 'rust'},

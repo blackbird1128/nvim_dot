@@ -13,7 +13,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 require("lazy").setup("plugins", {})
-vim.cmd("colorscheme catppuccin")
-vim.cmd("augroup transparent_signs au! autocmd ColorScheme * highlight SignColumn guibg=NONE augroup END")
+vim.cmd("colorscheme catppuccin-frappe")
+
+require("style")

@@ -1,21 +1,23 @@
---require('leap').add_default_mappings()
---
---local opts = require("leap").opts
---
---opts.max_phase_one_targets = nil
---opts.highlight_unlabeled_phase_one_targets = false
---opts.max_highlighted_traversal_targets = 10
---opts.case_sensitive = false
---opts.equivalence_classes = { ' \t\r\n', 'eéè','aà' }
---opts.substitute_chars = {}
---opts.safe_labels = { 'a','z','e','r','t' ,'q' ,'s' ,'d' ,'f' ,'g' ,'w' ,'x' ,'c' }
----- opts.labels = { 's', 'f', 'n', 'j', 'k'}
---opts.special_keys = {
---  next_target = '<enter>',
---  prev_target = '<tab>',
---  next_group = '<space>',
---  prev_group = '<tab>',
---  multi_accept = '<enter>',
---  multi_revert = '<backspace>',
---}
---
+
+local opts = require("leap").opts
+
+opts.max_phase_one_targets = nil
+opts.highlight_unlabeled_phase_one_targets = false
+opts.max_highlighted_traversal_targets = 8
+opts.case_sensitive = false
+opts.equivalence_classes = { ' \t\r\n', 'eéè','aà' }
+opts.safe_labels = {}
+opts.labels = {'a','z','e','r','j','k','l','m' ,'f','d','s','q','w','h'}
+opts.special_keys = {
+  next_target = '<Right>',
+  prev_target = '<Left>',
+  next_group = '<space>',
+  prev_group = '<tab>',
+  multi_accept = '<enter>',
+  multi_revert = '<backspace>',
+}
+
+
+
+
+

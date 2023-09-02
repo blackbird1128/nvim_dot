@@ -1,4 +1,8 @@
 
+require("copilot").setup({});
+
+
+
 vim.keymap.set('i', '<Tab>', function()
   if require("copilot.suggestion").is_visible() then
     require("copilot.suggestion").accept()
