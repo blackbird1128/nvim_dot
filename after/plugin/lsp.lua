@@ -22,6 +22,7 @@ end  )
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+
 lsp.setup()
 
 local rt = require('rust-tools')
@@ -37,15 +38,12 @@ lspconfig.rust_analyzer.setup({
     vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions,
     { buffer = bufnr })
     -- Code action groups
-    vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group,
-    { buffer = bufnr })
   end,
   cmd = {"rustup", "run", "stable", "rust-analyzer"},
 })
 -- end Rust part
 
 local cmp = require('cmp')
-
 cmp.setup {
   completion = {
     completeopt = 'menu,menuone,noinsert'
@@ -53,8 +51,9 @@ cmp.setup {
   sources = {
     { name = 'nvim_lsp' },
     { name = 'buffer' },
-    { name = 'path' },
     { name = 'treesitter' },
+    { name = 'nvim_lsp_signature_help' },
+    {name = 'path'},
   },
   mapping = {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
