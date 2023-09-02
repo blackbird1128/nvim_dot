@@ -22,7 +22,7 @@ vim.opt.mouse = 'a'
 -- vim.cmd("set signcolumn=number")
 
 vim.opt.updatetime = 50
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 700
 vim.opt.termguicolors =  true
 
 vim.o.wildignore = '*.o,*.a,__pycache__'

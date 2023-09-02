@@ -33,7 +33,7 @@ return {
     "folke/which-key.nvim",
     config = function()
         vim.o.timeout = true
-        vim.o.timeoutlen = 400
+        vim.o.timeoutlen = 800
         require("which-key").setup {
             -- or leave it empty to use the default settings
         }
