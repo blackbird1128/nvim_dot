@@ -17,7 +17,3 @@ opts.special_keys = {
   multi_revert = '<backspace>',
 }
 
-
-
-
-

@@ -3,7 +3,7 @@ vim.g.barbar_auto_setup = false -- disable auto-setup
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-map('n', '<leader><leader>', '<Cmd>BufferPick<CR>', opts)
+map('n', 'bb', '<Cmd>BufferPick<CR>', opts)
 map('n', '<A-x>', '<Cmd>BufferClose!<CR>', opts)
 
 -- map('n', '<A-a>', '<Cmd>BufferNext<CR>', opts)

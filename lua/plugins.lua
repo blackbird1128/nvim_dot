@@ -14,7 +14,7 @@ return {
     'mbbill/undotree',
     {'ggandor/leap.nvim', priority=1000},
     'jinh0/eyeliner.nvim',
-
+    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     'romgrk/barbar.nvim',
     'neovim/nvim-lspconfig',
