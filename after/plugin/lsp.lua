@@ -1,10 +1,6 @@
 local lsp = require('lsp-zero').preset({})
 local luasnip = require("luasnip")
 
-vim.diagnostic.config({
-  virtual_text = true,
-})
-
 
 lsp.on_attach(function(client, bufnr)
   local nmap = function(keys, func, desc)

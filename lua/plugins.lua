@@ -10,36 +10,17 @@ return {
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     'tpope/vim-fugitive',
     'lewis6991/gitsigns.nvim',
-    'theprimeagen/harpoon',
     'mbbill/undotree',
-    {'ggandor/leap.nvim', priority=1000},
-    'jinh0/eyeliner.nvim',
-    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    'junegunn/vim-peekaboo',
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     'romgrk/barbar.nvim',
     'neovim/nvim-lspconfig',
-    {
-        "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
-    },
+    "windwp/nvim-autopairs",
     {   "github/copilot.vim",
      build = ":Copilot setup",
     },
-    {
-    'simrat39/rust-tools.nvim', ft = 'rust'},
+    {   'simrat39/rust-tools.nvim', ft = 'rust'},
     { 'rust-lang/rust.vim', ft = 'rust' , config = function() vim.g.rustfmt_autosave = 1 end},
-
-    {
-    "folke/which-key.nvim",
-    config = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 800
-        require("which-key").setup {
-            -- or leave it empty to use the default settings
-        }
-    end
-    },
-
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',

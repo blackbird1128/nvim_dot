@@ -20,8 +20,8 @@ vim.opt.signcolumn = 'no'
 vim.opt.mouse = 'a'
 
 -- vim.cmd("set signcolumn=number")
-
 vim.opt.updatetime = 50
+vim.opt.timeout = true
 vim.opt.timeoutlen = 700
 vim.opt.termguicolors =  true
 
