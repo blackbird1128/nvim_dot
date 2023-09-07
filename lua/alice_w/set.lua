@@ -15,14 +15,10 @@ vim.o.smartcase = true
 
 vim.o.undofile = true
 
--- vim.api.nvim_exec("set signcolumn=no",false)
-vim.opt.signcolumn = 'no'
+-- vim.api.nvim_exec("set signcolumn=number",false)
 vim.opt.mouse = 'a'
-
--- vim.cmd("set signcolumn=number")
+vim.cmd("set signcolumn=no")
 vim.opt.updatetime = 50
-vim.opt.timeout = true
-vim.opt.timeoutlen = 700
 vim.opt.termguicolors =  true
 
 vim.o.wildignore = '*.o,*.a,__pycache__'

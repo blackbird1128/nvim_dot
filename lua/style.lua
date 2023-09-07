@@ -15,7 +15,10 @@ vim.api.nvim_set_hl(0, 'LeapLabelSecondary', {
   fg = 'white', bold = true, nocombine = true,
 })
 
+vim.api.nvim_set_hl(0,'VertSplit', { fg='white'}) -- set vertical split color to white (mainly for peekaboo)
+
+--vim.api.nvim_set_hl(0, 'EyelinerPrimary', { fg='#5ec4ff', bold=true})
+-- vim.api.nvim_set_hl(0, 'EyelinerSecondary', { fg='#ffffff',underline=true  })
 
 
-vim.api.nvim_set_hl(0, 'EyelinerPrimary', { fg='#5ec4ff', bold=true})
-vim.api.nvim_set_hl(0, 'EyelinerSecondary', { fg='#ffffff',underline=true  })
+
