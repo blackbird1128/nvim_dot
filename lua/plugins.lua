@@ -1,11 +1,10 @@
 return {
 
     { "catppuccin/nvim", name = "catppuccin", priority = 10000 },
-
     {
-          'nvim-telescope/telescope.nvim', tag = '0.1.2',
-          dependencies = { 'nvim-lua/plenary.nvim',   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },}
-      },
+        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        dependencies = { 'nvim-lua/plenary.nvim',   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },}
+    },
 
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {'tpope/vim-fugitive'},
@@ -34,8 +33,11 @@ return {
         {'hrsh7th/cmp-nvim-lsp-signature-help'}, -- Optional
         {"hrsh7th/cmp-path"}, -- Optional
         {'hrsh7th/nvim-cmp'},     -- Required
+        {"saadparwaiz1/cmp_luasnip"},
         {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
+        {
+            "L3MON4D3/LuaSnip",
+        }
     }
 }
 }
