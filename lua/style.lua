@@ -1,11 +1,11 @@
 
-vim.api.nvim_set_hl(0, 'LeapBackdrop', { link = 'Comment' }) -- or some grey
+vim.api.nvim_set_hl(0, 'LeapBackdrop', { link='Comment' }) -- or some grey
 vim.api.nvim_set_hl(0, 'LeapMatch', {
   -- For light themes, set to 'black' or similar.
   fg = 'white', bg='None', bold = true, nocombine = true,
 })
 -- Lightspeed colors
--- primary labels: bg = "#f02077" (light theme) or "#ff2f87"  (dark theme)
+--  primary labels: bg = "#f02077" (light theme) or "#ff2f87"  (dark theme)
 -- secondary labels: bg = "#399d9f" (light theme) or "#99ddff" (dark theme)
 -- shortcuts: bg = "#f00077", fg = "white"
 vim.api.nvim_set_hl(0, 'LeapLabelPrimary', {

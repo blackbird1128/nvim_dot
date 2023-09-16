@@ -30,11 +30,14 @@ lsp.setup()
 local rt = require('rust-tools')
 
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
+require('lspconfig').intelephense.setup {}
 lspconfig = require('lspconfig')
 
 -- Rust part
 lspconfig.rust_analyzer.setup({
+  checkOnSave = {
+    command = "clippy"
+  },
   on_attach = function(_, bufnr)
     -- Hover actions
     vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions,

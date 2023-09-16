@@ -5,16 +5,29 @@ return {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
         dependencies = { 'nvim-lua/plenary.nvim',   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },}
     },
-
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        init = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+        end,
+        opts = {
+            plugins = {
+                registers = false,
+            }
+        }
+    },
+    {'ggandor/leap.nvim'},
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
-    {'tpope/vim-fugitive'},
+    {'tpope/vim-fugitive', cmd="Git"},
     'lewis6991/gitsigns.nvim',
-    'mbbill/undotree',
-    'junegunn/vim-peekaboo',
+--    {'mbbill/undotree',event="VeryLazy" },
+    {'junegunn/vim-peekaboo', event="VeryLazy"},
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
-    'romgrk/barbar.nvim',
-    'neovim/nvim-lspconfig',
-    "windwp/nvim-autopairs",
+    {'romgrk/barbar.nvim'},
+    {'neovim/nvim-lspconfig', event="VeryLazy"},
+    {"windwp/nvim-autopairs", lazy=true},
     {   "github/copilot.vim",
      build = ":Copilot setup",
     },
@@ -26,7 +39,7 @@ return {
         dependencies = {
         -- LSP Support
         {'neovim/nvim-lspconfig'},             -- Required
-        {'williamboman/mason.nvim'},           -- Optional
+        {'williamboman/mason.nvim', cmd="Mason"},           -- Optional
         {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
         -- Autocompletion
@@ -36,7 +49,7 @@ return {
         {"saadparwaiz1/cmp_luasnip"},
         {'hrsh7th/cmp-nvim-lsp'}, -- Required
         {
-            "L3MON4D3/LuaSnip",
+            "L3MON4D3/LuaSnip",event="VeryLazy",
         }
     }
 }
