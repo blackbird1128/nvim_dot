@@ -3,7 +3,8 @@ return {
     { "catppuccin/nvim", name = "catppuccin", priority = 10000 },
     {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
-        dependencies = { 'nvim-lua/plenary.nvim',   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },}
+        dependencies = { 'nvim-lua/plenary.nvim',   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },},
+        event = "VeryLazy",
     },
     {
         "folke/which-key.nvim",
@@ -21,7 +22,7 @@ return {
     {'ggandor/leap.nvim'},
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {'tpope/vim-fugitive', cmd="Git"},
-    'lewis6991/gitsigns.nvim',
+    {'lewis6991/gitsigns.nvim', event="VeryLazy"},
 --    {'mbbill/undotree',event="VeryLazy" },
     {'junegunn/vim-peekaboo', event="VeryLazy"},
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
@@ -30,12 +31,14 @@ return {
     {"windwp/nvim-autopairs", lazy=true},
     {   "github/copilot.vim",
      build = ":Copilot setup",
+     event = "BufRead",
     },
     {   'simrat39/rust-tools.nvim', ft = 'rust'},
     { 'rust-lang/rust.vim', ft = 'rust' , config = function() vim.g.rustfmt_autosave = 1 end},
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
+        event = "VeryLazy",
         dependencies = {
         -- LSP Support
         {'neovim/nvim-lspconfig'},             -- Required
