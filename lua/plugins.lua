@@ -23,7 +23,7 @@ return {
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {'tpope/vim-fugitive', cmd="Git"},
     {'lewis6991/gitsigns.nvim', event="VeryLazy"},
---    {'mbbill/undotree',event="VeryLazy" },
+--    {'mbbill/undotree',event="VeryLazy" },²
     {'junegunn/vim-peekaboo', event="VeryLazy"},
     'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
     {'romgrk/barbar.nvim'},
@@ -38,13 +38,11 @@ return {
     {
         'VonHeikemen/lsp-zero.nvim',
         branch = 'v2.x',
-        event = "VeryLazy",
         dependencies = {
         -- LSP Support
         {'neovim/nvim-lspconfig'},             -- Required
         {'williamboman/mason.nvim', cmd="Mason"},           -- Optional
         {'williamboman/mason-lspconfig.nvim'}, -- Optional
-
         -- Autocompletion
         {'hrsh7th/cmp-nvim-lsp-signature-help'}, -- Optional
         {"hrsh7th/cmp-path"}, -- Optional
@@ -52,7 +50,7 @@ return {
         {"saadparwaiz1/cmp_luasnip"},
         {'hrsh7th/cmp-nvim-lsp'}, -- Required
         {
-            "L3MON4D3/LuaSnip",event="VeryLazy",
+            "L3MON4D3/LuaSnip",
         }
     }
 }
