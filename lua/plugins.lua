@@ -19,6 +19,12 @@ return {
             }
         }
     },
+    {
+      'stevearc/oil.nvim',
+      opts = {},
+      -- Optional dependencies
+      dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
     {'ggandor/leap.nvim'},
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
     {'tpope/vim-fugitive', cmd="Git"},

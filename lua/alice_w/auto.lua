@@ -10,10 +10,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.cmd("augroup transparent_signs au! autocmd ColorScheme * highlight SignColumn guibg=NONE augroup END")
 
 -- Auto cmd to set relative line numbers when it makes sense 
-vim.cmd("augroup numbertoggle")
-vim.cmd("autocmd!")
-vim.cmd("autocmd BufEnter,FocusGained,InsertLeave * set relativenumber")
-vim.cmd("autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber")
-vim.cmd("augroup END")
+vim.cmd[[augroup numbertoggle
+autocmd!
+autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
+]]
 
-
+--vim.cmd[[
+--  augroup markdown_keybindings
+--    autocmd!
+--    autocmd FileType oil nnoremap <buffer>  :Oil<CR>
+--  augroup END
+-- ]]

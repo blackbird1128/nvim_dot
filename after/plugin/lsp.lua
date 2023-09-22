@@ -1,5 +1,4 @@
 local lsp = require('lsp-zero').preset({})
-local luasnip = require("luasnip")
 
 
 lsp.on_attach(function(client, bufnr)
@@ -28,9 +27,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 lsp.setup()
 
 local rt = require('rust-tools')
-
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-require('lspconfig').intelephense.setup {}
 lspconfig = require('lspconfig')
 
 -- Rust part
