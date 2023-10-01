@@ -14,7 +14,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins", {})
+
 vim.cmd("colorscheme catppuccin-frappe")
+vim.cmd(":hi LineNr guibg=NONE cterm=NONE term=NONE")
+vim.cmd(":hi GitGutterAdd guibg=None")
+vim.cmd(":hi GitGutterChange guibg=None")
+vim.cmd(":hi GitGutterDelete guibg=NONE")
+vim.cmd(":hi GitGutterChangeDelete guibg=None")
+-- vim.cmd(":hi Normal guibg=#424242 ctermbg=NONE")
 require("style")
 
-require("oil").setup() 
+require("oil").setup()
