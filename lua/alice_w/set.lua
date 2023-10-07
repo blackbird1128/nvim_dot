@@ -21,7 +21,7 @@ vim.cmd("set signcolumn=no")
 vim.opt.updatetime = 50
 vim.opt.termguicolors =  true
 
-vim.o.wildignore = '*.o,*.a,__pycache__'
+vim.o.wildignore = '*.o,*.a,__pycache__,*.class,*.swp,*.bak,*.pyc,*.min.js,*.min.css,*.png,*.jpg,*.gif,*.jpeg,*.bmp,*.ico,*.pdf,*.svg,*.DS_Store,*.ttf,*.otf,*.woff,*.woff2,*.eot,*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz,*.apk,*.exe,*.7z,*.rdb,node_modules/**,*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store/*,*/.idea/*,*/.vscode/*,*/.cache/'
 vim.opt.colorcolumn = "80"
 
 
