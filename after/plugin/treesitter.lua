@@ -9,5 +9,16 @@ require'nvim-treesitter.configs'.setup {
     enable = true,
     additional_vim_regex_highlighting = false,
   },
+  ident = {
+    enable = true,
+  },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "vv",
+      node_incremental = "v",
+      node_decremental = "V",
+    },
+  },
 
 }
