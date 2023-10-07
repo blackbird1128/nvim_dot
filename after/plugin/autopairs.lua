@@ -14,14 +14,24 @@ npairs.setup({
 -- you can use some built-in conditions
 local cond = require('nvim-autopairs.conds')
 
+-- Rust
+
 npairs.add_rules({
     Rule("%S<$",">","rust")
     :use_regex(true)
 })
 
 npairs.add_rules({
-    Rule("|","|","rust")
+    Rule("|","|","rust"),
+    Rule("&","&","rust")
 })
 
+-- HTML
 
+npairs.add_rules({
+    Rule("<!--","-->",{"html","htmldjango"}),
+    Rule("<",">",{ "html", "htmldjango" }),
+    Rule("{%","%","htmldjango")
+
+})
 
