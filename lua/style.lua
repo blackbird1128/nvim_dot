@@ -17,6 +17,10 @@ vim.api.nvim_set_hl(0, 'LeapLabelSecondary', {
 
 vim.api.nvim_set_hl(0,'VertSplit', { fg='white'}) -- set vertical split color to white (mainly for peekaboo)
 
-
+vim.cmd(":hi LineNr guibg=NONE cterm=NONE term=NONE")
+vim.cmd(":hi GitGutterAdd guibg=None")
+vim.cmd(":hi GitGutterChange guibg=None")
+vim.cmd(":hi GitGutterDelete guibg=NONE")
+vim.cmd(":hi GitGutterChangeDelete guibg=None")
 --vim.api.nvim_set_hl(0, 'EyelinerPrimary', { fg='#5ec4ff', bold=true})
 -- vim.api.nvim_set_hl(0, 'EyelinerSecondary', { fg='#ffffff',underline=true  })
