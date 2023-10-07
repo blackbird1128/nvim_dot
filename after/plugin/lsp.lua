@@ -11,11 +11,17 @@ lsp.on_attach(function(client, bufnr)
 
   local opts = {buffer = bufnr,remap = false}
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-  vim.keymap.set("n", "gd",function()  vim.lsp.buf.definition()end, opts)
-  vim.keymap.set("n", "K",function() vim.lsp.buf.hover() end, opts)
-  vim.keymap.set("n", "<leader>vd",function() vim.diagnostic.open_float() end, opts)
-  vim.keymap.set("n", "<leader>rn", function ()  vim.lsp.buf.rename()  end,opts)
-  vim.keymap.set("n", "<leader>ca", function () vim.lsp.buf.code_action() end,opts)
+  nmap("gd",function()  vim.lsp.buf.definition()end, '[G]oto [D]efinition')
+  nmap("K",function() vim.lsp.buf.hover() end, '[K]ind')
+  nmap("<leader>vd",function() vim.diagnostic.open_float() end, '[V]iew [D]iagnostics')
+  nmap("<leader>rn", function ()  vim.lsp.buf.rename()  end, '[R]ename')
+  nmap("<leader>ca", function () vim.lsp.buf.code_action() end, '[C]ode [A]ction')
+  nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
+
+  vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
+    vim.lsp.buf.format()
+  end, { desc = 'Format current buffer with LSP' })
+
  -- see :help lsp-zero-keybindines
   -- to learn the available actions
 end  )
@@ -25,23 +31,9 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 
 lsp.setup()
-
-local rt = require('rust-tools')
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 lspconfig = require('lspconfig')
 
 -- Rust part
-lspconfig.rust_analyzer.setup({
-  checkOnSave = {
-    command = "clippy"
-  },
-  on_attach = function(_, bufnr)
-    -- Hover actions
-    vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions,
-    { buffer = bufnr })
-    -- Code action groups
-  end,
-  cmd = {"rustup", "run", "stable", "rust-analyzer"},
-})
+
 -- end Rust part
 
