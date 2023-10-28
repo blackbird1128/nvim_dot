@@ -9,9 +9,6 @@ return  {
         },
     },
     {'neovim/nvim-lspconfig',event={"BufAdd", "BufNewFile"},
-    --    cond= function ()
---      return vim.bo.filetype == "oil"
---    end,
     dependencies = {
         {'williamboman/mason.nvim', cmd="Mason"},           -- Optional
         {'williamboman/mason-lspconfig.nvim'}, -- Optional
