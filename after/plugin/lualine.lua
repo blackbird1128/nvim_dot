@@ -9,7 +9,7 @@ sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch'},
     lualine_c = {'filename'},
-    lualine_x = {"os.date('%h:%m')", 'filetype'},
+    lualine_x = {"os.date('%H:%M')", 'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
 },

@@ -1,5 +1,4 @@
 require("alice_w")
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -12,11 +11,15 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-
 require("lazy").setup("plugins", {})
-
 vim.cmd("colorscheme catppuccin-frappe")
--- vim.cmd(":hi Normal guibg=#424242 ctermbg=NONE")
+-- vim.cmd(":hi Normal guibg=#424242 ctermbg=NONE")  
 require("style")
+require("oil").setup({
+     default_file_explorer = true,
+})
 
-require("oil").setup()
+--local arg_count = #vim.v.argv
+--if arg_count == 3 and vim.v.argv[3] == "." then
+--   require("oil").open()
+--end

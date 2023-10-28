@@ -20,4 +20,5 @@ vim.keymap.set("n", "<Down>", "<nop>")
 vim.keymap.set("n", "<Left>", "<nop>")
 vim.keymap.set("n", "<Right>", "<nop>")
 
+
 map("n", "<leader><tab>", ":tabnew<CR>")
