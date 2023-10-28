@@ -1,8 +1,21 @@
+
 return  {
-    {'neovim/nvim-lspconfig',event="BufAdd",
+    {
+        "j-hui/fidget.nvim",
+        tag = "legacy",
+        event = "LspAttach",
+        opts = {
+            -- options
+        },
+    },
+    {'neovim/nvim-lspconfig',event={"BufAdd", "BufNewFile"},
+    --    cond= function ()
+--      return vim.bo.filetype == "oil"
+--    end,
     dependencies = {
         {'williamboman/mason.nvim', cmd="Mason"},           -- Optional
         {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
     },
     config = function()
         local lspconfig = require('lspconfig')

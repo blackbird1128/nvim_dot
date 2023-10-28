@@ -1,6 +1,9 @@
 return {
   "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
-    event = {"BufReadPre", "BufNewFile"},
+    event = {"BufNewFile", "BufAdd"},
+--    cond= function ()
+--       return vim.bo.filetype == "oil"
+--    end,
     config = function()
     require'nvim-treesitter.configs'.setup {
 
