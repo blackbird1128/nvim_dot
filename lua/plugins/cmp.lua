@@ -1,7 +1,6 @@
 return  {
     {
         'hrsh7th/nvim-cmp',event = "InsertEnter",
-        version = false,
         dependencies = {
             {'hrsh7th/cmp-nvim-lsp-signature-help'}, -- Optional
             {"hrsh7th/cmp-path" }, -- Optional
@@ -10,6 +9,9 @@ return  {
             {'hrsh7th/cmp-nvim-lsp'},
             {
                 "L3MON4D3/LuaSnip",
+                dependencies= {
+                    "rafamadriz/friendly-snippets"
+                }
             }
         },
         config = function ()
@@ -21,7 +23,7 @@ return  {
             end
 
             local luasnip = require("luasnip")
-
+            require("luasnip.loaders.from_vscode").lazy_load()
             local cmp = require('cmp')
 
             cmp.setup {
@@ -53,7 +55,7 @@ return  {
                     ['<C-Space>'] = cmp.mapping.complete(),
                     ['<CR>'] = cmp.mapping.confirm({
                     }),
-                    ["<Tab>"] = cmp.mapping(function(fallback)
+                    ["<C-n>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_next_item()
                             -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
@@ -67,7 +69,7 @@ return  {
                         end
                     end, { "i", "s"}),
 
-                    ["<S-Tab>"] = cmp.mapping(function(fallback)
+                    ["<C-p>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.select_prev_item()
                         elseif luasnip.jumpable(-1) then

@@ -1,6 +1,5 @@
 return {
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-
   {
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim',   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }}
@@ -9,23 +8,20 @@ return {
       "folke/which-key.nvim",
       init = function()
           vim.o.timeout = true
-          vim.o.timeoutlen = 50
+          vim.o.timeoutlen = 5
       end,
       opts = {
           plugins = { registers = true}
       }
   },
+  -- add this to your lua/plugins.lua, lua/plugins/init.lua,  or the file you keep your other plugins:
   {
-      "utilyre/sentiment.nvim",
-      version = "*",
-      event = "VeryLazy", -- keep for lazy loading
+      'numToStr/Comment.nvim',
+
       opts = {
-          -- config
+          -- add any options here
       },
-      init = function()
-          -- `matchparen.vim` needs to be disabled manually in case of lazy loading
-          vim.g.loaded_matchparen = 1
-      end,
+      event = {"BufAdd,BufNewFile"},
   },
   {
       "aserowy/tmux.nvim",
@@ -42,10 +38,7 @@ return {
   {
       'nvim-lualine/lualine.nvim',
   },
-   {
-       "github/copilot.vim",
-       event = "InsertEnter",
-  },
+  { "github/copilot.vim" ,event="InsertEnter"},
   {
       'simrat39/rust-tools.nvim', ft = 'rust'
   },
@@ -68,7 +61,6 @@ return {
           })
       end
   },
-
   {'tpope/vim-fugitive', cmd="Git"},
   {'lewis6991/gitsigns.nvim',event = {"BufReadPre", "BufNewFile"}},
 
