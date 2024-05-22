@@ -12,12 +12,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins", {})
-vim.cmd("colorscheme catppuccin-frappe")
--- vim.cmd(":hi Normal guibg=#424242 ctermbg=NONE")  
-require("style")
+vim.cmd("colorscheme gruvbox")
+require("style") 
 require("oil").setup({
      default_file_explorer = true,
 })
+
+vim.cmd(":hi Normal guibg=#272727 ctermbg=None")
 
 --local arg_count = #vim.v.argv
 --if arg_count == 3 and vim.v.argv[3] == "." then
