@@ -37,6 +37,13 @@ return {
       }
   },
   {
+      "whonore/Coqtail"
+  },
+  {
+      "tomtomjhj/coq-lsp.nvim" ,
+      opts = {}
+  },
+  {
       "aserowy/tmux.nvim",
       lazy = true,
       init = function ()
