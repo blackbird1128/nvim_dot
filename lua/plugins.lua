@@ -1,5 +1,4 @@
 return {
-  -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
   {
         'nvim-telescope/telescope.nvim',
@@ -17,6 +16,9 @@ return {
   },
   {
       'numToStr/Comment.nvim',
+      opts = {},
+      event = "InsertEnter",
+  },
   {
       'Julian/lean.nvim',
       event = { 'BufReadPre *.lean', 'BufNewFile *.lean' },
@@ -49,7 +51,7 @@ return {
   {
       'nvim-lualine/lualine.nvim',
   },
-  { "github/copilot.vim" ,event="InsertEnter"},
+  -- { "github/copilot.vim" ,event="InsertEnter"},
   {
       'simrat39/rust-tools.nvim', ft = 'rust'
   },
@@ -73,6 +75,7 @@ return {
       end
   },
   {'tpope/vim-fugitive', cmd="Git"},
+  {'tpope/vim-dispatch', cmd={"Make","Start"}},
   {'lewis6991/gitsigns.nvim',event = {"BufReadPre", "BufNewFile"}},
 
 }
