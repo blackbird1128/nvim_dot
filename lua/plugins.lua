@@ -15,14 +15,24 @@ return {
           plugins = { registers = true}
       }
   },
-  -- add this to your lua/plugins.lua, lua/plugins/init.lua,  or the file you keep your other plugins:
   {
       'numToStr/Comment.nvim',
+  {
+      'Julian/lean.nvim',
+      event = { 'BufReadPre *.lean', 'BufNewFile *.lean' },
+
+      dependencies = {
+          'neovim/nvim-lspconfig',
+          'nvim-lua/plenary.nvim',
+          -- you also will likely want nvim-cmp or some completion engine
+      },
 
       opts = {
-          -- add any options here
-      },
-      event = {"BufAdd,BufNewFile"},
+          lsp = {
+              on_attach = on_attach,
+          },
+          mappings = true,
+      }
   },
   {
       "aserowy/tmux.nvim",
