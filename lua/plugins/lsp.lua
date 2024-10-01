@@ -17,7 +17,7 @@ return  {
     config = function()
         local lspconfig = require('lspconfig')
         local lsp_defaults = lspconfig.util.default_config
-
+        lspconfig.gleam.setup({})
         lsp_defaults.capabilities = vim.tbl_deep_extend(
         'force',
         lsp_defaults.capabilities,

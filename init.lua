@@ -20,7 +20,3 @@ require("oil").setup({
 
 vim.cmd(":hi Normal guibg=#272727 ctermbg=None")
 
---local arg_count = #vim.v.argv
---if arg_count == 3 and vim.v.argv[3] == "." then
---   require("oil").open()
---end

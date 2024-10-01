@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
+vim.cmd("au BufRead,BufNewFile *.why,*.mlw set filetype=why3")
 vim.cmd("augroup transparent_signs au! autocmd ColorScheme * highlight SignColumn guibg=NONE augroup END")
 
 -- Auto cmd to set relative line numbers when it makes sense 
@@ -16,5 +17,5 @@ autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
 autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 ]]
-vim.cmd("au BufRead,BufNewFile *.why,*.mlw set filetype=why3")
+
 
